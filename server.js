@@ -23,3 +23,10 @@ app.set('view engine', 'handlebars');
 // Use the require method once everything is set
 var routes = require('./controllers/burgers_controller.js');
 app.use('/', routes);
+
+// Call the database correct port - 3000
+app.set('port', (process.env.PORT || 3000));
+
+app.listen(app.get('port'), function () {
+	console.log('App listening on PORT ', app.get('port'));
+});
